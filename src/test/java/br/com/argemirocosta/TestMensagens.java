@@ -7,7 +7,8 @@ public class TestMensagens {
 
     @Test
     public void testMensagens(){
-        Assert.assertEquals("Ok", Mensagens.mensagens("Ok"));
+        String teste = "Ok";
+        Assert.assertEquals(teste, Mensagens.mensagens(teste));
     }
 
 }
