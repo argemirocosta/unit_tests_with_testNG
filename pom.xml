@@ -65,14 +65,14 @@
                             <goal>report</goal>
                         </goals>
                     </execution>
-                    <!-- JaCoCo Plugin Integration Test-->
+                    <!-- JaCoCo Plugin Unit and Integration Test-->
                     <execution>
                         <id>before-unit-test-execution</id>
                         <goals>
                             <goal>prepare-agent</goal>
                         </goals>
                         <configuration>
-                            <destFile>${project.build.directory}/jacoco-output/jacoco-unit-tests.exec</destFile>
+                            <destFile>${project.build.directory}/jacoco-output/jacoco-ut.exec</destFile>
                             <propertyName>surefire.jacoco.args</propertyName>
                         </configuration>
                     </execution>
@@ -83,8 +83,8 @@
                             <goal>report</goal>
                         </goals>
                         <configuration>
-                            <dataFile>${project.build.directory}/jacoco-output/jacoco-unit-tests.exec</dataFile>
-                            <outputDirectory>${project.reporting.outputDirectory}/jacoco-unit-test-coverage-report</outputDirectory>
+                            <dataFile>${project.build.directory}/jacoco-output/jacoco-ut.exec</dataFile>
+                            <outputDirectory>${project.reporting.outputDirectory}/jacoco-ut-coverage-report</outputDirectory>
                         </configuration>
                     </execution>
                     <execution>
@@ -94,7 +94,7 @@
                             <goal>prepare-agent</goal>
                         </goals>
                         <configuration>
-                            <destFile>${project.build.directory}/jacoco-output/jacoco-integration-tests.exec</destFile>
+                            <destFile>${project.build.directory}/jacoco-output/jacoco-it.exec</destFile>
                             <propertyName>failsafe.jacoco.args</propertyName>
                         </configuration>
                     </execution>
@@ -105,7 +105,7 @@
                             <goal>report</goal>
                         </goals>
                         <configuration>
-                            <dataFile>${project.build.directory}/jacoco-output/jacoco-integration-tests.exec</dataFile>
+                            <dataFile>${project.build.directory}/jacoco-output/jacoco-it.exec</dataFile>
                             <outputDirectory>${project.reporting.outputDirectory}/jacoco-integration-test-coverage-report</outputDirectory>
                         </configuration>
                     </execution>
